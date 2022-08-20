@@ -1,0 +1,192 @@
+:root {
+  --bg-color: rgb(95, 93, 89);
+  --typewriterSpeed: 6s;
+  --typewriterCharacters: 19;
+}
+
+html, * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.body {
+    font-family:'Caveat Brush', cursive;
+    background-color: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    color:white;
+}
+
+.main{
+  display: flex;
+  flex-direction: column;
+  color:white;
+  min-height: 93vh;
+  width: 100%;
+}
+.header--title {
+  font-size: 60px;
+  position: relative;
+  font-family: monospace;
+  position: relative;
+  margin: 50px auto;
+  width: max-content;
+}
+
+
+.header--title::before,
+.header--title::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.header--title::before {
+  background: var(--bg-color);
+  animation: typewriter var(--typewriterSpeed)
+    steps(var(--typewriterCharacters)) 1s forwards;
+}
+
+.header--title::after {
+  width: 0.125em;
+  background: black;
+  animation: typewriter var(--typewriterSpeed)
+      steps(var(--typewriterCharacters)) 1s forwards,
+    blink 750ms steps(var(--typewriterCharacters)) infinite;
+}
+
+@keyframes typewriter {
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes blink {
+  to {
+    background: transparent;
+  }
+}
+
+
+.container{
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-grow: 1;
+
+}
+
+.container--card{
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
+    text-overflow: wrap;
+    margin: 16px;
+    background-color: black;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    text-align: center;
+    padding: 16px;
+
+}
+
+
+
+ .container--card:nth-child(odd){
+  background-color:yellow;
+  color:black;
+ } 
+
+.container--card:nth-child(even){
+  background-color:black;
+  color: yellow;
+} 
+.container--card .container--card--link {
+  color: inherit;
+}
+.container--card--title{
+    font-size: 30px;
+    text-overflow: wrap;
+    font-weight: bold;
+    margin: 30px 10px;
+    color: inherit;
+    text-shadow: 1px 1px red;
+}  
+
+/* .watch{
+    width: 300px;
+    height: 300px;
+    border-radius: 30%/ 30%;
+    background-color: black;
+    text-overflow: wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.watch--title{
+    font-size: 30px;
+    text-overflow: wrap;
+    font-weight: bold;
+    color: yellow;
+}
+.quiz{
+    width: 300px;
+    height: 300px;
+    border-radius: 30%/ 30%;
+    background-color: black;
+    text-overflow: wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.quiz--title{
+    font-size: 30px;
+    text-overflow: wrap;
+    font-weight: bold;
+    color: yellow;
+}
+.form{
+    width: 300px;
+    height: 300px;
+    border-radius: 30%/ 30%;
+    background-color: yellow;
+    text-overflow: wrap;
+    margin: 0 0 0 20px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+}
+.form--title{
+    font-size: 30px;
+    text-overflow: wrap;
+    font-weight: bold;
+    margin: 0 auto;
+    color: black;
+} */
+
+.footer{
+    width: 100%;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+@media only screen and (max-width: 490px){
+    .header--title{
+        font-size: 40px;
+    }
+}
